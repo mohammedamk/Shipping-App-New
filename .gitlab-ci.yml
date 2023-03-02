@@ -1,0 +1,15 @@
+before_script:
+  - docker version
+  - docker-compose version
+
+variables:
+  GIT_CLEAN_FLAGS: none
+
+build:
+  script:
+      - docker-compose down
+      - docker-compose build
+      - docker-compose up -d
+      
+  only:
+  - master

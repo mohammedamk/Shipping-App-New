@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!-- required meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- #favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- #title -->
+  <title>Email Template</title>
+  <!-- #keywords -->
+  <meta name="keywords" content="Email Template" />
+  <!-- #description -->
+  <meta name="description" content="Email Template" />
+
+  <style>
+    :root {
+      --progress: %%{tracking_progress}%%;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0px;
+      padding: 0px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .step__bar .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+
+    .breadcrumb {
+      margin: 0px 0px 0px;
+    }
+
+    .breadcrumb .breadcrumb-item {
+      color: #b8b6c5;
+    }
+
+    .breadcrumb .breadcrumb-item .primary {
+      color: #b8b6c5;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .breadcrumb .breadcrumb-item .primary:hover {
+      color: #3455f6;
+    }
+
+    .breadcrumb .breadcrumb-item::before {
+      color: #b8b6c5;
+      padding-right: 12px;
+    }
+
+    .breadcrumb .active {
+      padding-left: 12px;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .breadcrumb--secondary {
+      margin-top: 20px;
+    }
+
+    .banner {
+      margin-top: 15px;
+      margin-bottom: 40px;
+    }
+
+
+
+    .banner h3 {
+      text-align: center;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 42px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #685f5f;
+    }
+
+
+    .button {
+      padding: 12px 30px;
+      color: #ffffff;
+      border-radius: 5px;
+      transition: all 0.4s ease-in;
+    }
+
+    .button:hover {
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      margin-right: calc(-.5 * var(--bs-gutter-x));
+      margin-left: calc(-.5 * var(--bs-gutter-x));
+    }
+
+    .col {
+      flex: 1 0 0%;
+    }
+
+    .row>* {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-right: calc(var(--bs-gutter-x) * .5);
+      padding-left: calc(var(--bs-gutter-x) * .5);
+      margin-top: var(--bs-gutter-y);
+    }
+
+    .wrapper {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 60px;
+    }
+
+    .track__main__content {
+      text-align: left;
+    }
+
+    .track__main__content .button {
+      margin-top: 60px;
+      background-color: transparent;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 50px;
+      padding: 18px 40px 16px;
+      color: #685f5f;
+      transition: all 0.2s ease-in;
+    }
+
+    .text-end {
+      text-align: right !important;
+    }
+
+    .track__main__content .button:hover {
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.64);
+    }
+
+    .track__main__content .step__progress__bar {
+      width: 100%;
+      height: 30px;
+      background-color: #eff1f3;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .track__main__content .step__progress__bar::before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      width: var(--progress);
+      height: 100%;
+      border-radius: 30px;
+      background-color: #3455f6;
+    }
+
+    .track__main__content .step__progress__bar::after {
+      content: "";
+      position: absolute;
+      left: var(--progress);
+      top: 28%;
+      width: 5px;
+      height: 10px;
+      margin-left: -25px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      color: #ffffff;
+    }
+
+
+    .track__main__content .step__bar {
+      padding-bottom: 10px;
+    }
+
+    .track__main__content .step__bar .row .col .step__content {
+      position: relative;
+    }
+
+    .track__main__content .step__bar .row .col .step__content p {
+      font-size: 14px;
+      color: #b8b6c5;
+      max-width: 75px;
+      line-height: 20px;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .track__main__content .step__bar .row .col .step__content p:first-of-type {
+      color: #685f5f;
+      font-weight: 500;
+    }
+
+    .track__main__content .step__bar .row .col.empty-col .step__content::before {
+      content: '';
+      position: absolute;
+      top: -43px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 15px;
+      height: 15px;
+      background-color: #dfe0e7;
+      border-radius: 50%;
+    }
+
+    .track__main__content .step__bar .row .col:last-of-type .step__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .track__main__content .step__bar .row .col:last-of-type .step__content p {
+      text-align: right;
+      margin-left: auto;
+      font-size: 14px;
+    }
+
+    .track__main__content .step__bar .row .col:last-of-type .step__content::before {
+      content: '';
+      position: absolute;
+      top: -45px;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #dfe0e7;
+      border: 2px solid #3455f6;
+      border-radius: 50%;
+    }
+
+    .tabular__data h3 {
+      font-weight: 400;
+      color: #685f5f;
+      text-align: left;
+      font-size: 30px;
+      line-height: 42px;
+    }
+
+    .tabular__data table {
+      table-layout: fixed;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .btn_match {
+      text-align: center;
+      margin-top: 30px
+    }
+
+
+    .tabular__data table tr {
+      border-bottom: 1px solid #dfdfdf;
+    }
+
+    table,
+    th,
+    td {
+      border-bottom: 1px solid #dfdfdf;
+      border-collapse: collapse;
+    }
+
+
+    .tabular__data table tr th {
+      padding: 10px 0px;
+      vertical-align: middle;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .tabular__data table tr td {
+      vertical-align: top;
+      padding: 20px 0px;
+      color: #b8b6c5;
+      text-align: left;
+      font-size: 14px;
+    }
+
+
+    .tabular__data table tr td p {
+      margin-bottom: 8px;
+      max-width: 100%;
+      width: 100%;
+      font-size: 16px;
+      font-size: 14px;
+    }
+
+    .tabular__data table tr td:last-of-type {
+      width: 40%;
+    }
+
+    .tabular__data table tr td:last-of-type p {
+      text-align: right;
+      color: #b8b6c5;
+      font-size: 14px;
+    }
+
+    .tabular__data table tr td:last-of-type p:first-of-type {
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .over__one {
+      margin-bottom: 60px;
+    }
+
+
+
+    @media only screen and (max-width: 575px) {
+
+      .tabular__data table tr td {
+        padding: 8px 0px;
+        font-size: 12px;
+      }
+
+      .track__main__content .button {
+        margin-top: 30px;
+      }
+
+      .tabular__data table {
+        margin-top: 8px;
+      }
+
+      .track__main__content .step__progress__bar::after {
+        margin-left: -19px;
+      }
+
+
+      .over__one {
+        margin-bottom: 30px;
+        overflow-y: auto;
+      }
+
+      .over__one::-webkit-scrollbar {
+        width: 100%;
+        height: 5px;
+      }
+
+      .over__one::-webkit-scrollbar-track {
+        background-color: #e4e4e4;
+        border-radius: 5px;
+      }
+
+      .over__one::-webkit-scrollbar-button,
+      .over__one::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      .over__one .step__bar {
+        width: 360px;
+      }
+
+      .over__one .step__progress__bar {
+        width: 360px;
+      }
+
+      .track__main__content .step__bar .row .col .step__content p {
+        font-size: 12px;
+      }
+
+      .track__main__content .step__bar .row .col:last-of-type .step__content p {
+        font-size: 12px;
+      }
+
+      .track__main__content .step__progress__bar {
+        height: 23px;
+        margin-bottom: 24px;
+      }
+
+      .step__bar .row>* {
+        padding-right: 7px;
+        padding-left: 3px;
+      }
+    }
+
+    @media only screen and (max-width: 575px) {
+      .over__two {
+        overflow-y: auto;
+      }
+
+      .over__two::-webkit-scrollbar {
+        width: 100%;
+        height: 5px;
+      }
+
+      .over__two::-webkit-scrollbar-track {
+        background-color: #e4e4e4;
+        border-radius: 5px;
+      }
+
+      .over__two::-webkit-scrollbar-button,
+      .over__two::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+      }
+
+      .over__two table {
+        width: 100%;
+        min-width: 350px;
+      }
+
+      .tabular__data table tr td:last-of-type p {
+        font-size: 12px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+      }
+    }
+
+
+    @media only screen and (max-width: 599px) {
+      .wrapper {
+        max-width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+
+    <table class="logo" style="border-spacing: 0; background-color: #FCFCFC; border: 1px solid #F2F2F2;" width="100%">
+      <tbody>
+        <tr>
+          <td style=" text-align: center;">
+            <img title="logo" style="max-width: 200px;" src="%%{CLIENT_URL}%%/logo.png" width="200" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!-- ==== breadcrumb start ==== -->
+    <div class="banner d-flex justify-content-center">
+      <nav aria-label="breadcrumb">
+        <h3>Tracking</h2>
+      </nav>
+    </div>
+    <!-- ==== #breadcrumb end ==== -->
+
+
+    <!-- ==== track section start ==== -->
+    <section class="track">
+      <div class="container-fluid">
+        <div class="track__area">
+          <div class="track__main__content">
+            <div class="over__one">
+              <div class="step__progress__bar">
+
+              </div>
+              <div class="step__bar">
+                <div class="row">
+                  %%{trackingCols}%%
+
+                  <!-- <div class="col">
+                    <div class="step__content">
+                      <p>Ordered</p>
+                      <p>2022/04/12</p>
+                      <p>18:18</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="step__content">
+                      <p>Arrived at warehouse</p>
+                      <p>2022/04/12</p>
+                      <p>18:18</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="step__content">
+                      <p>Paid</p>
+                      <p>2022/04/12</p>
+                      <p>18:21</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="step__content">
+                      <p>Ready to pickup</p>
+                      <p>2022/04/12</p>
+                      <p>18:21</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="step__content">
+                      <p>Picked up</p>
+                      <p>2022/04/12</p>
+                      <p>18:22</p>
+                    </div>
+                  </div>
+                  <div class="col empty-col">
+                    <div class="step__content">
+
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="step__content">
+                      <p>Delivery</p>
+                      <p></p>
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>
+            </div>
+            <div class="tabular__data">
+              <h3>Updates</h3>
+              <div class="over__two">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Location</th>
+                      <th class="text-end">Event</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    %%{updatesRows}%%
+                    <!-- <tr>
+                    <td>
+                    20/06/17 - 17:32
+                    </td>
+                    <td>Roma, IT</td>
+                    <td>
+                    <p>Shipped</p>
+                    <p>Carrier: TNT</p>
+                    <p>Tracking Nr: F847368394756</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    20/06/17 - 18:32
+                    </td>
+                    <td>Roma, IT</td>
+                    <td>
+                    <p>Ready</p>
+                    <p>Waiting for Carrier</p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    19/06/17 - 17:32
+                    </td>
+                    <td>-</td>
+                    <td>
+                    <p>Ordered</p>
+                    </td>
+                    </tr> -->
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="btn_match">
+              <a target="_blank" href="%%{CLIENT_URL}%%/customer/packages" class="button">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==== #track section end ==== -->
+  </div>
+
+
+
+</body>
+
+</html>
